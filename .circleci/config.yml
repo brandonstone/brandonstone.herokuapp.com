@@ -1,16 +1,10 @@
-# Use the latest 2.1 version of CircleCI pipeline processing engine, see https://circleci.com/docs/2.0/configuration-reference/
 version: 2.1
 
 jobs:
   build:
-    docker:
+    docker: 
       - image: circleci/golang:latest
-  
-  deploy:
+
     steps:
       - checkout
-      - run:
-        name: Deploy Master to Heroku
-        command: |
-          git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git master
-
+      - run: go get -u github.com/gorilla/mux
