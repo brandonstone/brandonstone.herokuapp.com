@@ -8,3 +8,25 @@ jobs:
     steps:
       - checkout
       - run: go get -u github.com/gorilla/mux
+
+  deploy:
+    docker:
+      - image: circleci/golang:latest
+    steps:
+      - checkout
+      - run:
+          name: Deploy Heroku-Deployment
+          command: |
+            git push https://heroku:$HEROKU_API_KEY@git.heroku.com/$HEROKU_APP_NAME.git heroku-deployment
+    
+workflows:
+  version: 2
+  build-deploy:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: heroku-deployment
