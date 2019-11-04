@@ -1,6 +1,6 @@
 # brandonstone.heroku.com
 
-[![CircleCI](https://circleci.com/gh/CircleCI-Public/circleci-cli.svg?style=shield)](https://circleci.com/gh/brandonstone/herokuapp)
+[![CircleCI](https://circleci.com/gh/brandonstone/herokuapp.svg?style=svg)](https://circleci.com/gh/brandonstone/herokuapp)
 [![SuperDopeBadge](./static/images/hightower-dope.svg)](https://github.com/runatlantis/atlantis/)
 
 ## About
